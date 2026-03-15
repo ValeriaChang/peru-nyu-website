@@ -250,8 +250,15 @@ footer{
   }
 
   .event-grid{
+    display:flex;
     flex-direction:column;
     align-items:center;
+    gap:20px;
+  }
+
+  .event-card{
+    width:90%;
+    max-width:350px;
   }
 
   .hamburger{
