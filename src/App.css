@@ -113,23 +113,66 @@ button:hover{
 }
 
 .event-grid{
-  display:flex;
-  justify-content:center;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
   gap:20px;
-  flex-wrap:wrap;
+  max-width:900px;
+  margin:auto;
 }
 
-.event-card{
-  background:white;
-  padding:30px;
-  width:200px;
-  border-radius:10px;
-  box-shadow:0 4px 8px rgba(0,0,0,0.1);
-  transition:0.2s;
+.event-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #57068c;
+  text-align: center;
+  width: 220px;
+  transition: 0.3s ease;
 }
 
-.event-card:hover{
-  transform:translateY(-5px);
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+}
+
+.event-date {
+  color: #000000;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  min-width: 60px;
+  margin-bottom: 8px;
+}
+
+.event-time {
+  font-weight: bold;
+  color: #57068c;
+  margin-top: 5px;
+}
+
+.event-month {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.event-day {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.event-info h3 {
+  margin: 5px 0;
+}
+
+.event-info p {
+  margin: 2px 0;
+}
+
+.events h2{
+  margin-bottom:30px;
 }
 
 /* GALLERY */
@@ -172,14 +215,6 @@ button:hover{
   border:none;
   background: var(--nyu-purple);
   color:white;
-}
-
-.join button{
-  margin:10px;
-  padding:12px 20px;
-  border:none;
-  background: var(--nyu-purple);
-  color:white;
   cursor:pointer;
 }
 
@@ -194,6 +229,14 @@ footer{
   color:white;
   text-align:center;
   padding:20px;
+}
+
+/* HAMBURGER */
+
+.hamburger{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
 }
 
 /* MOBILE RESPONSIVE */
@@ -211,8 +254,27 @@ footer{
     align-items:center;
   }
 
+  .hamburger{
+    display:block;
+  }
+
   .nav-links{
+    position:absolute;
+    top:60px;
+    right:0;
+    background:var(--nyu-purple);
+    width:200px;
     display:none;
+    flex-direction:column;
+    padding:20px;
+  }
+
+  .nav-links a{
+    margin:10px 0;
+  }
+
+  .nav-links.active{
+    display:flex;
   }
 
 }
